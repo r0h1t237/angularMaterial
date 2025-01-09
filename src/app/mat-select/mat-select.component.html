@@ -1,0 +1,106 @@
+<div class="container1">
+    <!-- simple select with two way binding   -->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select [(value)]="selectedValue1">
+            <mat-option value="angular">Angular</mat-option>
+            <mat-option value="react">React</mat-option>
+            <mat-option value="vue">Vue</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="textCenter"> {{selectedValue1}} </div>
+
+
+    <mat-divider></mat-divider>
+
+    <!-- simple select with reset option and two way binding-->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select [(value)]="selectedValue2">
+            <mat-option>none</mat-option>
+            <mat-option value="angular">Angular</mat-option>
+            <mat-option value="react">React</mat-option>
+            <mat-option value="vue">Vue</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="textCenter">{{selectedValue2}}</div>
+
+    <!-- select with multiple value selection -->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select multiple>
+            <mat-option disabled>none</mat-option>
+            <mat-option selected value="angular">Angular</mat-option>
+            <mat-option value="react">React</mat-option>
+            <mat-option value="vue">Vue</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="textCenter">{{selectedValue3}}</div>
+
+    <!-- select with option group  and panel color -->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select [value]="selectedValue4" #selectedValue04 panelClass="red">
+            <mat-option>None</mat-option>
+            <mat-optgroup label="Frontend">
+                <mat-option value="angular">Angular</mat-option>
+                <mat-option value="react">React</mat-option>
+                <mat-option value="vue">Vue</mat-option>
+            </mat-optgroup>
+            <mat-optgroup label="Backend">
+                <mat-option value="go">Go</mat-option>
+                <mat-option value="sprintBoot">Spring Boot</mat-option>
+                <mat-option value="nodeJS">Node JS</mat-option>
+            </mat-optgroup>
+        </mat-select>
+    </mat-form-field>
+    <div class="textCenter">{{ selectedValue04.value | json}}</div>
+
+    <!-- select with template driven -->
+    <form #genderForm1="ngForm" (ngSubmit)="verifyGender(genderForm1)">
+        <mat-form-field>
+            <mat-label>Select Gender</mat-label>
+            <mat-select name="selectedGender" ngModel required>
+                <mat-option>None</mat-option>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+            </mat-select>
+            <mat-hint>Select your gender</mat-hint>
+            <mat-error *ngIf="genderForm1.controls['selectedGender']?.hasError('required')">Select one of the options {{
+                genderForm1.controls['selectedGender'].errors?.['required'] | json }}</mat-error>
+        </mat-form-field>
+        <button class="m10" mat-stroked-button type="submit" color="warn"
+            [disabled]="genderForm1.invalid">Submit</button>
+    </form>
+
+    <!-- select  with model driven -->
+    <form [formGroup]="genderForm2" (ngSubmit)="onSubmit()">
+        <mat-form-field class="m10">
+            <mat-label>Select Gender</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option>None</mat-option>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+            </mat-select>
+            <mat-hint>Please select gender.</mat-hint>
+                <mat-error *ngIf="genderForm2.controls['gender'].hasError('required')"> Gender is required</mat-error>           
+        </mat-form-field>
+        <button class="m10" mat-stroked-button type="submit" color="warn"
+            [disabled]="genderForm2.invalid">Submit</button>
+
+        {{genderForm2.value |json}}
+    </form>
+
+    <!-- select with function to perform task on selection change -->
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select  (selectionChange)="log($event)" >
+            <mat-option value="angular">Angular</mat-option>
+            <mat-option value="react">React</mat-option>
+            <mat-option value="vue">Vue</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>

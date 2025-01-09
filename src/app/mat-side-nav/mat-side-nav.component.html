@@ -1,0 +1,141 @@
+<!-- different mode of sidenav -->
+<!-- <mat-sidenav-container>
+        <mat-sidenav mode="over" [(opened)]="isOpen" ><div class="container">Sidenav</div></mat-sidenav> 
+        <mat-sidenav-content>
+            <div class="grid">
+                <div class="column">
+                      <div class="row">
+                        <p>Main</p>
+                      </div>
+                      <div class="row">
+                         <button (click)="isOpen=!isOpen">
+                            Toggle Side Nav 
+                         </button>
+                      </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container>
+        <mat-sidenav mode="push" [(opened)]="isOpen" ><div class="container">Sidenav</div></mat-sidenav> 
+        <mat-sidenav-content>
+            <div class="grid">
+                <div class="column">
+                      <div class="row">
+                        <p>Main</p>
+                      </div>
+                      <div class="row">
+                         <button (click)="isOpen=!isOpen">
+                            Toggle Side Nav 
+                         </button>
+                      </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container>
+        <mat-sidenav mode="side" [(opened)]="isOpen" ><div class="container">Sidenav</div></mat-sidenav> 
+        <mat-sidenav-content>
+            <div class="grid">
+                <div class="column">
+                      <div class="row">
+                        <p>Main</p>
+                      </div>
+                      <div class="row">
+                         <button (click)="isOpen=!isOpen">
+                            Toggle Side Nav 
+                         </button>
+                      </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container> -->
+
+
+<!-- different method to open sidenav -->
+
+<!-- <mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="isOpen">
+        <div class="container">Sidenav</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="grid">
+            <div class="column">
+                <div class="row">
+                    <p>Main</p>
+                </div>
+                <div class="row">
+                    <button (click)="isOpen=!isOpen">
+                        Toggle Side Nav
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav>
+        <div class="container">Sidenav</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="grid">
+            <div class="column">
+                <div class="row">
+                    <p>Main</p>
+                </div>
+                <div class="row">
+                   <button class="m10" (click)='sidenav.open()'>
+                    Open sidenav
+                   </button>
+                   <button class="m10" (click)='sidenav.close()'>
+                    Close sidenav
+                   </button>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav>
+        <div class="container">Sidenav</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="column">
+                <div class="row">
+                    <p>Main</p>
+                </div>
+                <div class="row">
+                   <button class="m10" (click)='sidenav.toggle()'>
+                    Toggle sidenav
+                   </button>                  
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- listening opened and closed event of sideNav -->
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav (opened)="log('sidenav is opened')" (closed)="log('sidenav is closed')">
+        <div class="container">Sidenav</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="column">
+                <div class="row">
+                    <p>Main</p>
+                </div>
+                <div class="row">
+                   <button class="m10" (click)='sidenav.toggle()'>
+                    Toggle sidenav
+                   </button>                  
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

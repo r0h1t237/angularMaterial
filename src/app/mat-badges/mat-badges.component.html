@@ -1,0 +1,30 @@
+<div class="container m10">
+    <!-- simple badge -->
+    <div class="row m10">
+        <span matBadge="5">Notification</span>
+    </div>
+    <!-- badge at different position -->
+    <div class="row m10">
+        <span matBadge="5" matBadgePosition="below before"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgePosition="below after"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgePosition="above before"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgePosition="above after"><span class="boundary">Notification</span></span>
+    </div>
+    <!-- badge of different sizing  -->
+    <div class="row m30">
+        <span matBadge="5" matBadgeSize="small"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgeSize="medium"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgeSize="large"><span class="boundary">Notification</span></span>        
+    </div>
+    <!-- badge of different color -->
+     <div class="row m10">
+        <span matBadge="5" matBadgeColor="primary"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgeColor="accent"><span class="boundary">Notification</span></span>
+        <span matBadge="5" matBadgeColor="warn"><span class="boundary">Notification</span></span>  
+    </div>
+    <!-- avoid overlap of badge from text and hidden too -->
+    <div class="row m30">
+        <span matBadge="5" matBadgeOverlap="false">Notification</span>
+        <span  class="m30" [matBadge]="notification"  [matBadgeHidden]="notification==0" matBadgeColor="warn" matBadgeOverlap="false"><span class="boundary">Notification</span></span>  
+    </div> 
+</div>

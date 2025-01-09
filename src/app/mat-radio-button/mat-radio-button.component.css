@@ -1,0 +1,12 @@
+.outerContainer{
+    margin: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    }
+    
+    .textCenter{
+        text-align: center;
+    }

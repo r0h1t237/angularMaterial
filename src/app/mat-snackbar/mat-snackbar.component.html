@@ -1,0 +1,32 @@
+<div class="outerContainer">
+    <!-- simple snackbar -->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="openSnackBar1('Item modified')">Show SnackBar</button>
+    </div>
+
+    <!-- snackbar with action -->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="openSnackBar2('Item modified','dismiss')">Show SnackBar</button>
+    </div>
+
+    <!-- snackbar with action and duration  -->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="openSnackBar3('Item modified','dismiss',1000)">Show SnackBar</button>
+    </div>
+
+    <!-- snackbar with action, duration and position -->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="openSnackBar4('Item modified','dismiss',1000)">Show SnackBar</button>
+    </div>
+
+    <!-- custom snackbar-->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="customSnackBar1()">Show SnackBar</button>
+    </div>
+
+    <!-- custom snackbar with duration and data-->
+    <div class="textCenter">
+        <button mat-stroked-button (click)="customSnackBar2()">Show SnackBar</button>
+    </div>
+
+</div>

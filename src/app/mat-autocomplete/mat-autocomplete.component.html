@@ -1,0 +1,45 @@
+<div class="outerContainer">
+    <form>
+        <!-- simple autocomplete -->
+        <mat-form-field floatLabel="always" color="accent" appearance="outline">
+            <input type="text" matInput [matAutocomplete]="auto1" placeholder="select one from below">
+            <mat-autocomplete #auto1="matAutocomplete">
+                <mat-option *ngFor="let option of options" value="{{option}}">{{option}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+
+    </form>
+
+    <!-- autoComplete with displaywith derivatives -->
+    <form>
+        <mat-form-field floatLabel="always" color="accent" appearance="outline">
+            <input type="text" matInput [matAutocomplete]="auto2" placeholder="select one from below">
+            <mat-autocomplete #auto2="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of objOptions" [value]="option">{{option.name}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+
+    <!-- autoComplete with template driven -->
+    <form #courseForm1="ngForm">
+        <mat-form-field color="primary" >
+            <input type="text" matInput [matAutocomplete]="auto3" placeholder="select one from below" ngModel name="course1" #course1="ngModel" >
+            <mat-autocomplete #auto3="matAutocomplete" >
+                <mat-option *ngFor="let option of filteredOptions1 | async" [value]="option">{{option}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+
+    <form [formGroup]="courseForm2">
+        <mat-form-field color="warn" appearance="outline">
+            <input type="text" matInput [matAutocomplete]="auto4" placeholder="select one from below" formControlName="course2">
+            <mat-autocomplete #auto4="matAutocomplete" autoActiveFirstOption >
+                <mat-option *ngFor="let option of filteredOptions2 |async" [value]="option">{{option}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+
+
+
+</div>

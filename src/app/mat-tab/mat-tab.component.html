@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="column">
+        <!-- <mat-tab-group #tabRef         (selectedTabChange)="log(tabRef.selectedIndex)"          > -->
+        <mat-tab-group #tabRef  [(selectedIndex)]="currentIndex"         >
+
+            <mat-tab label="Angular">Angular Content</mat-tab>
+            <mat-tab label="React">React Content</mat-tab>
+            <mat-tab label="Vue">Vue Content</mat-tab>
+        </mat-tab-group>
+        <div class="row">
+            <!-- {{tabRef.selectedIndex}} -->
+             {{currentIndex}}
+        </div>
+    </div>
+</div>

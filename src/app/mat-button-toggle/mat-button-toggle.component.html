@@ -1,0 +1,24 @@
+<div class="container m10">
+    <!-- toggle button -->
+<div class="row">
+    <mat-button-toggle class="m10" #toggleBtn disableRipple disabled>Toggle </mat-button-toggle>{{toggleBtn.checked}}
+</div>
+<!-- toggle button group -->
+<div class="row">
+    <mat-button-toggle-group class="m10" #toggleGroup1="matButtonToggleGroup">
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup1.value}}
+</div>
+<!-- toggle button group multiple value -->
+<div class="row">
+    <mat-button-toggle-group class="m10" #toggleGroup2="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup2.value}}
+</div>
+</div>

@@ -1,0 +1,16 @@
+@import url('../mat-progress-bar/mat-progress-bar.component.css');
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.links span{
+    margin: 20px;
+}
+
+.row{
+    align-items: center;
+}

@@ -1,0 +1,92 @@
+<div class="m10">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Angular Fundamentals
+            </mat-panel-title>
+            <mat-panel-description>
+                Total Duration : 3 hrs
+            </mat-panel-description>
+            <mat-icon>date_range</mat-icon>
+        </mat-expansion-panel-header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis fugit necessitatibus eos doloribus at
+            minus ea saepe earum, laborum magni sint? Magnam minima, soluta, unde laudantium commodi quaerat cum
+            aliquam, aperiam nisi impedit pariatur in quas quasi deleniti possimus? Culpa natus architecto ipsa unde
+            corporis ex eum. Minima, dicta cum!
+        </p>
+        <mat-action-row>
+            <button mat-stroked-button color="warn">Navigate</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</div>
+
+<div class="m10">
+    <div class="row">
+            <button mat-button color="accent" (click)="expand()" [disabled]="isOpen">Expand All</button>
+            <button mat-button color="accent" (click)="collapse()"  [disabled]="!isOpen">Collapse All</button>
+    </div>
+    <!-- Accordian multi='true' (so each expansion panel act independent) hideToggle (icon from each expansion panel disapper)-->
+    <mat-accordion multi="true" hideToggle="true">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamentals
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total Duration : 3 hrs
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis fugit necessitatibus eos doloribus at
+                minus ea saepe earum, laborum magni sint? Magnam minima, soluta, unde laudantium commodi quaerat cum
+                aliquam, aperiam nisi impedit pariatur in quas quasi deleniti possimus? Culpa natus architecto ipsa unde
+                corporis ex eum. Minima, dicta cum!
+            </p>
+            <mat-action-row>
+                <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" disabled>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamentals
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total Duration : 3 hrs
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis fugit necessitatibus eos doloribus at
+                minus ea saepe earum, laborum magni sint? Magnam minima, soluta, unde laudantium commodi quaerat cum
+                aliquam, aperiam nisi impedit pariatur in quas quasi deleniti possimus? Culpa natus architecto ipsa unde
+                corporis ex eum. Minima, dicta cum!
+            </p>
+            <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                <button mat-button color="primary" (click)="nextStep()">Next</button>
+              </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamentals
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total Duration : 3 hrs
+                </mat-panel-description>
+                <mat-icon>date_range</mat-icon>
+            </mat-expansion-panel-header>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis fugit necessitatibus eos doloribus at
+                minus ea saepe earum, laborum magni sint? Magnam minima, soluta, unde laudantium commodi quaerat cum
+                aliquam, aperiam nisi impedit pariatur in quas quasi deleniti possimus? Culpa natus architecto ipsa unde
+                corporis ex eum. Minima, dicta cum!
+            </p>
+            <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

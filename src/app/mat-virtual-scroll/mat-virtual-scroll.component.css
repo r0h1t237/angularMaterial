@@ -1,0 +1,19 @@
+@import url('../mat-tooltip/mat-tooltip.component.css');
+*{
+    padding: 0;
+    margin:0;
+}
+.number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px dotted grey;
+    box-sizing: border-box;
+    height:100px;
+
+}
+
+.container{
+    height:400px;
+
+}

@@ -1,0 +1,28 @@
+.container1{
+    margin:10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.orangePanel{
+    background: orange;
+    color: white;
+}
+
+.red.mat-mdc-select-panel{
+    background:red;
+    color:white;
+
+}
+
+.m10{
+    margin:10px;
+}

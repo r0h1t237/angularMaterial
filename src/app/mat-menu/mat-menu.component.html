@@ -1,0 +1,90 @@
+<div class="container">
+    <!-- simple menu -->
+
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+    </div> -->
+
+    <!-- nested menu -->
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="frontMenu">FrontEnd</button>
+            <button mat-menu-item [matMenuTriggerFor]="backMenu">BackEnd</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+
+        <mat-menu #frontMenu="matMenu">
+            <button mat-menu-item>Angular</button>
+            <button mat-menu-item>React</button>
+            <button mat-menu-item>Vue</button>
+        </mat-menu>
+
+        <mat-menu #backMenu="matMenu">
+            <button mat-menu-item>Spring Boot</button>
+            <button mat-menu-item>NodeJS</button>
+            <button mat-menu-item>Go</button>
+        </mat-menu>
+     </div> -->
+
+    <!-- postioning of menu -->
+
+    <!-- case 1 -->
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu" xPosititon="after" yPosition="below"> 
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+    </div> -->
+
+    <!-- case 2 -->
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu" xPosititon="after" yPosition="above"> 
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+    </div> -->
+
+    <!-- case 3 -->
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu" xPosititon="before" yPosition="above"> 
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+    </div> -->
+
+    <!-- case 4 -->
+    <!-- <div class="row">
+        <mat-menu #appMenu="matMenu" xPosititon="before" yPosition="below"> 
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+        </mat-menu>      
+       
+    </div> -->
+
+    <!-- Lazing loading of menu -->
+    <!-- <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent let-fname="fname" let-lname="lname">
+            <button mat-menu-item>Setting</button>
+            <button mat-menu-item>Log out {{fname}}</button>
+        </ng-template>
+    </mat-menu>
+
+    <button mat-flat-button [matMenuTriggerData]="{fname:'Rohit',lname:'Dubey'}" [matMenuTriggerFor]="lazyMenu">Rohit</button> -->
+
+    <!-- we can disable some menu item too -->
+     <div class="row">
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item>FrontEnd</button>
+            <button mat-menu-item>BackEnd</button>
+            <button mat-menu-item disabled>DevOps</button>
+        </mat-menu>      
+        <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+    </div>
+</div>

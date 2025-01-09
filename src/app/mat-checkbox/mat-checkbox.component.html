@@ -1,0 +1,40 @@
+<div class="outerContainer">
+    <mat-checkbox class="textCenter" color="warn">hi</mat-checkbox> <!-- default color is accent-->
+    <mat-checkbox class="textCenter" labelPosition="before" color="primary">hi</mat-checkbox> <!-- before | after -->
+    <mat-checkbox class="textCenter" checked>angular</mat-checkbox>
+    <mat-checkbox class="textCenter" disableRipple>react</mat-checkbox>
+    <mat-checkbox class="textCenter" disabled>vue</mat-checkbox>
+    <mat-checkbox class="textCenter">hello</mat-checkbox>
+    <mat-checkbox class="textCenter" indeterminate>hello</mat-checkbox>
+
+    <div>
+        <p>with change detection fucntion</p>
+        <mat-checkbox class="textCenter" (change)="status(alpha.value,alpha.checked)" value="hello" #alpha>hello</mat-checkbox>
+
+    </div>
+
+
+    <!-- checkbox with template driven form -->
+    <form #loginForm1="ngForm" (ngSubmit)="onSubmit1(loginForm1.value)">
+        <div ngModelGroup="gender">
+            <mat-label>Select your gender : </mat-label>
+            <mat-checkbox [ngModel]="true" name="male" value="male">option1</mat-checkbox>
+            <mat-checkbox [ngModel]="checkVariable" name="female" value="female">option2</mat-checkbox>
+            <mat-checkbox ngModel name="other" value="other">option3</mat-checkbox>
+        </div>
+        <button mat-stroked-button type="submit" color="warn" [disabled]="loginForm1.invalid">submit</button>
+    </form>
+
+    <!-- checkbox with reactive form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="gender">
+            <mat-label>Select your gender : </mat-label>
+            <mat-checkbox formControlName="male" value="male">option1</mat-checkbox>
+            <mat-checkbox formControlName="female" value="female">option2</mat-checkbox>
+            <mat-checkbox formControlName="other" value="other">option3</mat-checkbox>
+        </div>
+        <button mat-stroked-button type="submit" color="warn" [disabled]="loginForm.invalid">submit</button>
+        
+    </form>
+
+</div>

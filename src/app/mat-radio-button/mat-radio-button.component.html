@@ -1,0 +1,47 @@
+<div class="outerContainer">
+    <!-- basic radio button -->
+    <mat-radio-group class="textCenter">
+        <mat-radio-button value="angular">Angular</mat-radio-button>
+        <mat-radio-button value="react">React</mat-radio-button>
+        <mat-radio-button value="vue">Vue</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- basic radio button with label right -->
+    <mat-radio-group class="textCenter" labelPosition="before" color="warn"> <!-- default labelPosition is after-->
+        <mat-radio-button value="angular">Angular</mat-radio-button>
+        <mat-radio-button value="react">React</mat-radio-button>
+        <mat-radio-button value="vue">Vue</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- basic radio button with change detection  -->
+    <mat-radio-group class="textCenter" (change)="selectedValue()" [(ngModel)]="choose">
+        <!-- default labelPosition is after-->
+        <mat-radio-button value="angular">Angular</mat-radio-button>
+        <mat-radio-button value="react">React</mat-radio-button>
+        <mat-radio-button value="vue">Vue</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- mat radio button with form driven -->
+    <form #course="ngForm" (ngSubmit)="onSubmit(course.value)">
+        <mat-radio-group class="textCenter" ngModel name="course" required> <!-- default labelPosition is after-->
+            <mat-radio-button value="angular">Angular</mat-radio-button>
+            <mat-radio-button value="react">React</mat-radio-button>
+            <mat-radio-button value="vue">Vue</mat-radio-button>
+        </mat-radio-group>
+        <button mat-stroked-button style="display: block;" type="submit" color="warn"
+            [disabled]="course.invalid">submit</button>
+    </form>
+
+    <!-- mat radio button with form driven reactive form -->
+    <form [formGroup]="course1" (ngSubmit)="onSubmit1()">
+        <mat-radio-group class="textCenter" formControlName="course" required> <!-- default labelPosition is after-->
+            <mat-radio-button value="angular">Angular</mat-radio-button>
+            <mat-radio-button value="react">React</mat-radio-button>
+            <mat-radio-button value="vue">Vue</mat-radio-button>
+        </mat-radio-group>
+        <button mat-stroked-button style="display: block;" type="submit" color="warn"
+            [disabled]="course1.invalid">submit</button>
+    </form>
+
+
+</div>

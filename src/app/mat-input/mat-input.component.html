@@ -1,0 +1,104 @@
+<div class="container1">
+    <!-- Every input element should have mat-form-field wrapper -->
+    <!-- floatLabel set how label should behave type 1 auto default -->
+    <mat-form-field floatLabel="auto">
+        <mat-label>Name</mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+
+    <!-- floatLabel set how label should behave type 2 always default -->
+    <mat-form-field floatLabel="always">
+        <mat-label>Name</mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+
+    <!-- required attribute on input shows asterik-->
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+    </mat-form-field>
+
+    <!-- mat hint to show user some hint   -->
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+        <mat-hint align="end">type text</mat-hint>
+        <!-- align can be start or end , by default it will be start -->
+    </mat-form-field>
+
+    <!-- hideRequireMarker remove astriek sign from required input field -->
+    <mat-form-field hideRequiredMarker color="accent">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+        <mat-hint align="end">type text</mat-hint>
+    </mat-form-field>
+
+    <!-- appearance might fill and outline , by default it will be fill -->
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+        <mat-hint>type text</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="warn">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+        <mat-hint>type text</mat-hint>
+    </mat-form-field>
+
+    <!-- two way binding on input  -->
+    <mat-form-field appearance="outline" color="warn">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="userName" required>
+        <mat-hint>type text</mat-hint>
+    </mat-form-field>
+
+    <!-- Errors also wrapped in mat-form-field but required form control -->
+
+    <!-- template driven form -->
+    <!-- #userfrom='ngForm' create instance of ngForm for userForm so other formModules directive can be used
+               (ngSubmit)='verify()' after pressing submit button or form submit it will triggered verify()
+               [(ngModel)]='uname' it will bind uname to the input
+                #u='ngModel' it will create template reference variable which we access to valid  -->
+    <form #myForm="ngForm" (ngSubmit)="myForm.valid && verify(myForm.value)" >
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" required name="uname" [(ngModel)]="uname" #u="ngModel" minlength="25">
+            <mat-error *ngIf="u.errors?.['required']">Name is required</mat-error>
+            <mat-error *ngIf="myForm.controls['uname']?.errors?.['minlength']">Min character is
+                {{u.errors?.['minlength']?.requiredLength}}</mat-error>
+        </mat-form-field>
+        <!-- <button type="submit" mat-stroked-button [disabled]="myForm.invalid" color="warn">submit</button> -->
+    </form>
+
+
+    <!-- model driven or reactive form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="m10">
+            <mat-label>Enter your email</mat-label>
+            <input matInput type="text" placeholder="pat@example.com" formControlName="email">
+            <mat-hint>Min 5 letter.</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m10">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" formControlName="pwd">
+            <mat-hint>Minmum 8 character.</mat-hint>
+            <!-- <span *ngIf="loginForm.controls['pwd'].errors"> -->
+                <mat-error *ngIf="loginForm.controls['pwd'].hasError('required')"> Password is required</mat-error>
+            <!-- </span> -->
+        </mat-form-field>
+
+        {{loginForm.value |json}}
+    </form>
+
+    <!-- Input with suffix or perfix -->
+    <mat-form-field  appearance="outline">
+        <mat-label>Phone number</mat-label>
+        <input matInput type="tel" placeholder="0000000000">
+        <mat-icon matSuffix>phone</mat-icon>
+        <span matTextPrefix>+91</span>
+        <!-- <mat-hint>Include area code</mat-hint> -->
+      </mat-form-field>
+
+</div>

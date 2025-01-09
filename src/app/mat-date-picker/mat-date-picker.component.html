@@ -1,0 +1,115 @@
+<div class="outerContainer">
+    <!-- basic date picker -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker1">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker1"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker1></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- with start view changes  -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker2">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker2"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker2 startView="multi-year"></mat-datepicker>
+            <!-- by default is month and other options are year | multi-year -->
+        </mat-form-field>
+    </div>
+
+    <!-- date picker with different date toggle option -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker3">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker3">
+                <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker3></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- date picker with max and min constraint  -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker4" [min]="minDate" [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker4">
+            </mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker4></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- adding filter property to calender like sunday and holiday date should be disabled -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker5" [matDatepickerFilter]="dateFilter">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker5"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker5></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- date picker with different color -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker6 ">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker6 "></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker6 color="warn"></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- date picker open when click on input -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker7" (focus)="myDatePicker7.open()">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker7"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker7></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- date picker with marked dates for holiday ViewEncapsulation is required -->
+    <div class="textCenter">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker8">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker8"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker8 [dateClass]="dateClass"></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <!-- date picker with template driven form -->
+    <form class="textCenter" #dateform="ngForm" (ngSubmit)="dateform.valid && log(dateform.value)">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker9" ngModel name="selectedDate" required #date="ngModel">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker9"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker9></mat-datepicker>
+            <mat-error *ngIf="date.errors?.['required']">date is required</mat-error>
+        </mat-form-field>
+        <!-- <button mat-stroked-button type="submit"> submit</button> -->
+    </form>
+
+    <form class="textCenter" [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>select date </mat-label>
+            <input matInput [matDatepicker]="myDatePicker10" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="myDatePicker10"></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker10></mat-datepicker>
+            <mat-hint>MM/YYYY</mat-hint>
+            <mat-error *ngIf="dateForm.controls['date'].hasError('required')"> Date is required</mat-error>
+
+        </mat-form-field>
+        <div class="textCenter">
+        <button mat-stroked-button type="submit" [disabled]="dateForm.invalid">Submit</button>
+
+        </div>
+
+    </form>
+</div>

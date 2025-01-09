@@ -1,0 +1,8 @@
+<h2 mat-dialog-title [align]="data?.titleAlign ?? 'center'">{{data?.title??'Delete file'}}</h2>
+<mat-dialog-content>
+ {{ data?.content ?? 'Would you like to delete cat.jpeg?'}}
+</mat-dialog-content>
+<mat-dialog-actions [align]="'end'">
+  <button mat-button [mat-dialog-close]="data?.confirmReturnValue ?? true" cdkFocusInitial>{{data?.confirmTitle ?? 'Yes'}}</button>
+  <button mat-button [mat-dialog-close]="data?.rejectReturnValue ?? false" >{{ data?.rejectTitle ?? 'No'}}</button>
+</mat-dialog-actions>
